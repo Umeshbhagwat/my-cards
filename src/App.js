@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Fruit from './Components/Fruit';
+import "./style.css"
+import FruitData from './Components/FruitData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Frutsinfo=(value)=>
+{
+  return(
+<>
+<Fruit 
+   title={value.title}
+   imgsrc={value.imgsrc}
+   desc={value.desc}
+   btn={value.btn}
+  />
+</>
+  )
 }
 
-export default App;
+const App=() =>{
+  return (
+ <>
+   <h1> About Fruit</h1>
+   <div className='container'> 
+ 
+  {FruitData.map(Frutsinfo)}
+
+  </div>
+  </>
+ )}
+ export default App;
